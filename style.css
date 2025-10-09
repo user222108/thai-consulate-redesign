@@ -1,0 +1,142 @@
+/* ===== BASE ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+  line-height: 1.6;
+}
+a { color: #2F3A8F; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== HEADER ===== */
+.top { padding: 20px 0 10px; }
+.top-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.top h1 {
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  flex: 1;
+}
+.flag, .emblem {
+  width: 60px;
+  height: auto;
+  display: block;
+}
+.rule {
+  border: none;
+  border-top: 2px solid #000;
+  max-width: 960px;
+  margin: 10px auto 0;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+.details {
+  margin-top: 12px;
+}
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+    column-gap: 1px;
+  }
+  .details {
+  margin-top: 0;
+  padding-top: 20px;
+  margin-left: -15px;   /* pull text column slightly left */
+}
+
+}
+
+/* ===== PHOTO BLOCK ===== */
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #d1d5db;
+}
+.photo figcaption {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* ===== DETAILS ===== */
+.location {
+  margin: 0 0 40px 0; /* spacing under location */
+  color: #111;
+}
+.consul-title {
+  margin: 0 0 50px 0; /* doubled spacing under HONORARY CONSUL block */
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 800;
+  position: relative;
+  padding-bottom: 6px;
+}
+.consul-title .sub {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: .3px;
+}
+.consul-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 140px;
+  height: 3px;
+  background: #C9A227; /* Thai gold accent */
+  border-radius: 2px;
+}
+
+/* === Address and contact === */
+.info .address {
+  margin: 0 0 50px 0; /* doubled spacing between address and contact */
+}
+.info .contact {
+  margin: 0 0 10px 0;
+}
+.info p strong {
+  display: inline-block;
+  width: 90px;
+}
+
+/* ===== CONSULAR NOTE ===== */
+.consular { margin-top: 32px; }
+.consular h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+.consular p { margin: .4rem 0; }
+
+/* ===== FOOTER ===== */
+.footer {
+  margin-top: 36px;
+  background: #0b0b0b;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 10px 12px;
+  font-size: 13px;
+}
