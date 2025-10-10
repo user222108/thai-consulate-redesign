@@ -1,12 +1,14 @@
 /* ===== BASE ===== */
 * { box-sizing: border-box; }
 html, body { margin: 0; }
+html, body { margin: 0; }
 body {
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: #1f2937;
   background: #ffffff;
   line-height: 1.6;
 }
+
 a { color: #2F3A8F; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -34,9 +36,10 @@ a:hover { text-decoration: underline; }
 }
 .rule {
   border: none;
-  border-top: 2px solid #000;
+  border-top: 3px solid #C9A227;   /* Thai royal gold */
   max-width: 960px;
-  margin: 10px auto 0;
+  margin: 12px auto 0;
+  border-radius: 2px;
 }
 
 /* ===== LAYOUT ===== */
@@ -60,11 +63,10 @@ a:hover { text-decoration: underline; }
     column-gap: 1px;
   }
   .details {
-  margin-top: 0;
-  padding-top: 20px;
-  margin-left: -15px;   /* pull text column slightly left */
-}
-
+    margin-top: 0;
+    padding-top: 20px;
+    margin-left: -15px;   /* pull text column slightly left */
+  }
 }
 
 /* ===== PHOTO BLOCK ===== */
@@ -72,7 +74,10 @@ a:hover { text-decoration: underline; }
   width: 100%;
   height: auto;
   display: block;
-  border: 1px solid #d1d5db;
+  border: 3px solid #C9A227;        /* thicker gold frame */
+  border-radius: 18px;              /* rounder corners */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* soft shadow for depth */
+  background: #fff8e1;              /* subtle warm tone under gold */
 }
 .photo figcaption {
   font-size: 14px;
@@ -82,62 +87,113 @@ a:hover { text-decoration: underline; }
 
 /* ===== DETAILS ===== */
 .location {
-  margin: 0 0 40px 0; /* spacing under location */
+  margin: 0 0 40px 0;
   color: #111;
 }
 .consul-title {
-  margin: 0 0 50px 0; /* doubled spacing under HONORARY CONSUL block */
+  margin: 0 0 50px 0;
   font-size: 20px;
   line-height: 1.25;
   font-weight: 800;
   position: relative;
-  padding-bottom: 6px;
+  padding: 10px 0 6px;
 }
+
+/* gold lines above and below, centered */
+.consul-title::before,
+.consul-title::after {
+  content: "";
+  position: absolute;
+  left: 29%;                     /* moves the gold line left */
+  transform: translateX(-50%);
+  width: 255px;                  /* adjust for length */
+  height: 3px;
+  background: #C9A227;
+  border-radius: 2px;
+}
+.consul-title::before { top: -2px; }
+.consul-title::after  { bottom: -6px; }
+
+
 .consul-title .sub {
   font-size: 14px;
   font-weight: 700;
   color: #111;
   letter-spacing: .3px;
 }
-.consul-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 140px;
-  height: 3px;
-  background: #C9A227; /* Thai gold accent */
-  border-radius: 2px;
-}
 
 /* === Address and contact === */
 .info .address {
-  margin: 0 0 50px 0; /* doubled spacing between address and contact */
+  margin: 0 0 50px 0;
 }
 .info .contact {
-  margin: 0 0 10px 0;
+  margin: 0;   /* remove bottom margin entirely */
+  line-height: 1.4; /* tighten vertical spacing slightly */
 }
 .info p strong {
   display: inline-block;
-  width: 60px;
+  width: 55px;   /* tighter label width for Phone/E-mail */
+  font-weight: 700;
 }
 
 /* ===== CONSULAR NOTE ===== */
-.consular { margin-top: 32px; }
+.consular {
+  margin-top: 32px;
+}
 .consular h3 {
   margin: 0 0 8px 0;
   font-size: 16px;
   font-weight: 800;
 }
-.consular p { margin: .4rem 0; }
+.consular p {
+  margin: .4rem 0;
+}
 
 /* ===== FOOTER ===== */
 .footer {
+  position: relative;
   margin-top: 36px;
-  background: #0b0b0b;
-  color: #e5e7eb;
+  background: linear-gradient(
+    to right,
+    #DA2128 0% 16.666%,
+    #FFFFFF 16.666% 33.333%,
+    #2F3A8F 33.333% 66.666%,
+    #FFFFFF 66.666% 83.333%,
+    #DA2128 83.333% 100%
+  );
+  color: #ffffff;                 /* bright text */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4); /* helps visibility */
   text-align: center;
-  padding: 10px 12px;
+  padding: 18px 12px 14px;
   font-size: 13px;
+  font-weight: 600;
+  border-top: 2px solid #C9A227;  /* gold accent separator */
 }
+
+
+/* optional subtle gold shimmer line above footer */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #C9A227;
+}
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1; /* pushes footer to the bottom */
+}
+.footer {
+  margin-top: auto; /* footer sticks at bottom even if page is short */
+}
+
+
 
