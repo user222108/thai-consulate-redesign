@@ -36,7 +36,7 @@ a:hover { text-decoration: underline; }
 }
 .rule {
   border: none;
-  border-top: 3px solid #C9A227;   /* Thai royal gold */
+  border-top: 3px solid #004152;
   max-width: 960px;
   margin: 12px auto 0;
   border-radius: 2px;
@@ -74,10 +74,13 @@ a:hover { text-decoration: underline; }
   width: 100%;
   height: auto;
   display: block;
-  border: 3px solid #C9A227;        /* thicker gold frame */
-  border-radius: 18px;              /* rounder corners */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* soft shadow for depth */
-  background: #fff8e1;              /* subtle warm tone under gold */
+  border: none;                     /* completely remove border */
+  border-radius: 0;
+            /* keep rounded corners */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* soft shadow only */
+  background: transparent;          /* no background tint */
+}
+
 }
 .photo figcaption {
   font-size: 14px;
@@ -98,22 +101,6 @@ a:hover { text-decoration: underline; }
   position: relative;
   padding: 10px 0 6px;
 }
-
-/* gold lines above and below, centered */
-.consul-title::before,
-.consul-title::after {
-  content: "";
-  position: absolute;
-  left: 29%;                     /* moves the gold line left */
-  transform: translateX(-50%);
-  width: 255px;                  /* adjust for length */
-  height: 3px;
-  background: #C9A227;
-  border-radius: 2px;
-}
-.consul-title::before { top: -2px; }
-.consul-title::after  { bottom: -6px; }
-
 
 .consul-title .sub {
   font-size: 14px;
@@ -153,34 +140,32 @@ a:hover { text-decoration: underline; }
 .footer {
   position: relative;
   margin-top: 36px;
-  background: linear-gradient(
-    to right,
-    #DA2128 0% 16.666%,
-    #FFFFFF 16.666% 33.333%,
-    #2F3A8F 33.333% 66.666%,
-    #FFFFFF 66.666% 83.333%,
-    #DA2128 83.333% 100%
-  );
-  color: #ffffff;                 /* bright text */
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4); /* helps visibility */
+  background: #004152;              /* solid dark blue-green background */
+  color: #ffffff;                   /* white text for contrast */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
   text-align: center;
   padding: 18px 12px 14px;
   font-size: 13px;
   font-weight: 600;
-  border-top: 2px solid #C9A227;  /* gold accent separator */
+  overflow: hidden;
 }
 
-
-/* optional subtle gold shimmer line above footer */
-.footer::before {
+/* === Optional dark overlay for smoother tone on small screens === */
+.footer::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #C9A227;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);  /* subtle overlay for better contrast */
+  z-index: 0;
 }
+
+/* === Keep © text above overlay === */
+.footer small {
+  position: relative;
+  z-index: 1;
+}
+
+
 html, body {
   height: 100%;
 }
