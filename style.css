@@ -1,4 +1,4 @@
-/* ===== BASE ===== */
+/* Base */
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 html, body { margin: 0; }
@@ -12,7 +12,7 @@ body {
 a { color: #2F3A8F; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ===== HEADER ===== */
+/* Header */
 .top { padding: 20px 0 10px; }
 .top-inner {
   max-width: 960px;
@@ -42,7 +42,7 @@ a:hover { text-decoration: underline; }
   border-radius: 2px;
 }
 
-/* ===== LAYOUT ===== */
+/* Layout */
 .container {
   max-width: 960px;
   margin: 24px auto;
@@ -65,20 +65,20 @@ a:hover { text-decoration: underline; }
   .details {
     margin-top: 0;
     padding-top: 20px;
-    margin-left: -15px;   /* pull text column slightly left */
+    margin-left: -15px;   
   }
 }
 
-/* ===== PHOTO BLOCK ===== */
+/* Photo */
 .photo img {
   width: 100%;
   height: auto;
   display: block;
-  border: none;                     /* completely remove border */
+  border: none;                    
   border-radius: 0;
-            /* keep rounded corners */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* soft shadow only */
-  background: transparent;          /* no background tint */
+            
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15); 
+  background: transparent;          
 }
 
 }
@@ -109,21 +109,21 @@ a:hover { text-decoration: underline; }
   letter-spacing: .3px;
 }
 
-/* === Address and contact === */
+/* Adress */
 .info .address {
   margin: 0 0 50px 0;
 }
 .info .contact {
-  margin: 0;   /* remove bottom margin entirely */
-  line-height: 1.4; /* tighten vertical spacing slightly */
+  margin: 0;   
+  line-height: 1.4; 
 }
 .info p strong {
   display: inline-block;
-  width: 55px;   /* tighter label width for Phone/E-mail */
+  width: 55px;   
   font-weight: 700;
 }
 
-/* ===== CONSULAR NOTE ===== */
+/* Note */
 .consular {
   margin-top: 32px;
 }
@@ -136,12 +136,12 @@ a:hover { text-decoration: underline; }
   margin: .4rem 0;
 }
 
-/* ===== FOOTER ===== */
+/* Footer */
 .footer {
   position: relative;
   margin-top: 36px;
-  background: #004152;              /* solid dark blue-green background */
-  color: #ffffff;                   /* white text for contrast */
+  background: #004152;             
+  color: #ffffff;                  
   text-shadow: 0 1px 3px rgba(0,0,0,0.4);
   text-align: center;
   padding: 18px 12px 14px;
@@ -150,24 +150,24 @@ a:hover { text-decoration: underline; }
   overflow: hidden;
 }
 
-/* === Optional dark overlay for smoother tone on small screens === */
+/* Footer 2 */
 .footer::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.15);  /* subtle overlay for better contrast */
+  background: rgba(0, 0, 0, 0.15); 
   z-index: 0;
 }
 
-/* === Keep © text above overlay === */
+
 .footer small {
   position: relative;
   z-index: 1;
 }
 
 
-/* Ensure the document can stretch to full height */
-/* ===== PAGE LAYOUT FIX ===== */
+
+/* Layout */
 html, body {
   height: 100%;
   min-height: 100%;
@@ -178,16 +178,16 @@ html, body {
 }
 
 main {
-  flex: 1; /* pushes footer to bottom on desktop */
+  flex: 1; 
 }
 
-/* Footer sticks to bottom, with safe padding for mobile */
+
 .footer {
   margin-top: auto;
-  padding: 18px 12px calc(18px + env(safe-area-inset-bottom)); /* adds space for iPhone bars */
+  padding: 18px 12px calc(18px + env(safe-area-inset-bottom)); 
 }
 
-/* Mobile adjustments for smaller screens */
+
 @media (max-width: 600px) {
   .footer {
     font-size: 12px;
@@ -196,12 +196,13 @@ main {
   }
 }
 
-/* Fallback for browsers that don't support env() */
+
 @supports (padding-bottom: max(0px)) {
   .footer {
     padding-bottom: max(18px, env(safe-area-inset-bottom));
   }
 }
+
 
 
 
