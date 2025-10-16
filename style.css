@@ -166,28 +166,43 @@ a:hover { text-decoration: underline; }
 }
 
 
+/* Ensure the document can stretch to full height */
+/* ===== PAGE LAYOUT FIX ===== */
 html, body {
   height: 100%;
-}
-body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
+
 main {
-  flex: 1; /* pushes footer to the bottom */
-}
-.footer {
-  margin-top: auto; /* footer sticks at bottom even if page is short */
+  flex: 1; /* pushes footer to bottom on desktop */
 }
 
-/* Mobile footer adjustment */
+/* Footer sticks to bottom, with safe padding for mobile */
+.footer {
+  margin-top: auto;
+  padding: 18px 12px calc(18px + env(safe-area-inset-bottom)); /* adds space for iPhone bars */
+}
+
+/* Mobile adjustments for smaller screens */
 @media (max-width: 600px) {
   .footer {
-    font-size: 12px;         /* slightly smaller text for narrow screens */
-    padding: 14px 8px 12px;  /* tighter padding so it fits nicely */
-    line-height: 1.4;        /* better readability on mobile */
+    font-size: 12px;
+    line-height: 1.4;
+    padding: 14px 8px calc(14px + env(safe-area-inset-bottom));
   }
 }
+
+/* Fallback for browsers that don't support env() */
+@supports (padding-bottom: max(0px)) {
+  .footer {
+    padding-bottom: max(18px, env(safe-area-inset-bottom));
+  }
+}
+
 
 
 
