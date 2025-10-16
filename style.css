@@ -180,5 +180,15 @@ main {
   margin-top: auto; /* footer sticks at bottom even if page is short */
 }
 
+/* Mobile footer adjustment */
+@media (max-width: 600px) {
+  .footer {
+    font-size: 12px;         /* slightly smaller text for narrow screens */
+    padding: 14px 8px 12px;  /* tighter padding so it fits nicely */
+    line-height: 1.4;        /* better readability on mobile */
+  }
+}
+
+
 
 
